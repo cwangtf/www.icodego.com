@@ -1,0 +1,3 @@
+[submodule "themes/beg"]
+	path = themes/beg
+	url = https://github.com/cwangtf/hugo_theme_beg.git

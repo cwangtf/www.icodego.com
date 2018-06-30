@@ -1,0 +1,4 @@
+baseURL = "https://www.icodego.com/"
+languageCode = "zh-cn"
+title = "icodego"
+theme = "beg"
