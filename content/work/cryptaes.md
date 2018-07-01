@@ -125,7 +125,7 @@ class CryptAES
     public static function hex2bin($hexdata) {
         $bindata = '';
         $length = strlen($hexdata);
-        for ($i=0; $i amp;< $length; $i += 2)
+        for ($i=0; $i < $length; $i += 2)
         {
             $bindata .= chr(hexdec(substr($hexdata, $i, 2)));
         }
