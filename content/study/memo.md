@@ -29,3 +29,4 @@ ln -s source target #软链接
 * <a href="https://psr.phphub.org" target="_blank">PHP 标准规范</a>
 * <a href="https://blog.csdn.net/shmilychan/article/details/73433804" target="_blank">Redis+Twemproxy+HAProxy集群</a>
 * <a href="https://blog.csdn.net/zhuxineli/article/details/14455029" target="_blank">MYSQL explain详解</a>
+* <a href="http://825635381.iteye.com/blog/2276077" target="_blank">高并发的核心技术-幂等的实现方案</a>
