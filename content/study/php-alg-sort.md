@@ -118,8 +118,8 @@ function quickSort($arr) {
         }
     }
     //再分别对左边和右边的数组进行相同的排序处理方式递归调用这个函数
-    $left_array = quick_sort($left_array);
-    $right_array = quick_sort($right_array);
+    $left_array = quickSort($left_array);
+    $right_array = quickSort($right_array);
     //合并
     return array_merge($left_array, array($base_num), $right_array);
 }
