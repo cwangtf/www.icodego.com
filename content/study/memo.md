@@ -13,6 +13,17 @@ ln source target #硬链接
 ln -s source target #软链接
 ```
 
+* XSS 攻击和 CSRF 攻击的常见防御措施：  
+参考链接：<a href="https://github.com/dwqs/blog/issues/68" target="_blank">浅说 XSS 和 CSRF</a>
+  1. 防御XSS攻击
+    a. HttpOnly 防止劫取 Cookie
+    b. 用户的输入检查
+    c. 服务端的输出检查
+  2. 防御 CSRF 攻击
+    a. 验证码
+    b. Referer Check
+    c. Token 验证
+
 * 聚簇索引和非聚簇索引
 * nginx中rewrite指令last、break区别
 * 组合索引最左优先原则
@@ -31,3 +42,4 @@ ln -s source target #软链接
 * <a href="https://blog.csdn.net/zhuxineli/article/details/14455029" target="_blank">MYSQL explain详解</a>
 * <a href="http://825635381.iteye.com/blog/2276077" target="_blank">高并发的核心技术-幂等的实现方案</a>
 * <a href="https://www.jianshu.com/p/a4beee06220c" target="_blank">TCP三次握手和四次挥手深入实践</a>
+* <a href="https://github.com/dwqs/blog/issues/24" target="_blank">29个你必须知道的Linux命令</a>
