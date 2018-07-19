@@ -13,7 +13,7 @@ AES指高级加密标准（Advanced Encryption Standard）,是当前最流行的
 
 * PHP代码：
 
-```
+```php
 <?php
 class CryptAES
 {
@@ -166,7 +166,7 @@ this is a string will be AES_Encrypt
 
 * Java代码：
 
-```
+```java
 import java.security.Key; 
 import javax.crypto.Cipher; 
 import javax.crypto.spec.SecretKeySpec; 

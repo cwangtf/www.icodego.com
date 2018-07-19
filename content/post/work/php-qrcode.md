@@ -9,7 +9,7 @@ tags: ["PHP", "二维码"]
 
 #### 1.利用Google API生成二维码
 Google提供了较为完善的二维码生成接口，调用API接口简单，然而国内你懂的，示例代码：
-```
+```php
 $urlToEncode='https://www.icodego.com'; 
 generateQRfromGoogle($urlToEncode); 
 /** 
@@ -37,7 +37,7 @@ function generateQRfromGoogle($chl,$widhtHeight ='150',$EC_level='L',$margin='0'
 phpqrcode是一个PHP二维码生成类库，利用它可以轻松生成二维码，官网提供了下载和多个演示demo，查看地址：[http://phpqrcode.sourceforge.net](http://phpqrcode.sourceforge.net/ "qrcode")  
 下载之后只需要使用phpqrcode.php就可以生成二维码，需要注意的是PHP环境必须开启支持GD2  
 phpqrcode.php提供了一个关键的png()方法，其中参数$text表示生成二维码的信息文本；参数$outfile表示是否输出二维码图片文件，默认否；参数$level表示容错率，也就是有被覆盖的区域还能识别，分别是 L（QR_ECLEVEL_L，7%），M（QR_ECLEVEL_M，15%），Q（QR_ECLEVEL_Q，25%），H（QR_ECLEVEL_H，30%）； 参数$size表示生成图片大小，默认是3；参数$margin表示二维码周围边框空白区域间距值；参数$saveandprint表示是否保存二维码并显示
-```
+```php
 public static function png($text, $outfile=false, $level=QR_ECLEVEL_L, $size=3, $margin=4, $saveandprint=false) 
 {
     $enc = QRencode::factory($level, $size, $margin); 
@@ -45,14 +45,14 @@ public static function png($text, $outfile=false, $level=QR_ECLEVEL_L, $size=3, 
 }
 ```
 使用方式
-```
+```php
 include 'phpqrcode.php';   
 QRcode::png('https://www.icodego.com');
 die;
 ```
 二维码中间加logo应用  
 原理：先使用phpqrcode生成一张二维码图片，再利用php的image相关函数，将事先准备好的logo图片加入到刚生成的原始二维码图片中间，然后重新生成一张新的二维码图片。
-```
+```php
 include 'phpqrcode.php'; 
 $value = 'https://www.icodego.com'; //二维码内容 
 $errorCorrectionLevel = 'L';//容错级别 

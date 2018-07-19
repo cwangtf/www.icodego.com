@@ -59,7 +59,7 @@ tags: ["MySQL", "开发规范"]
 隐式转换例子
 
 字段:remark varchar(50) NOT Null
-```
+```mysql
 MySQL>SELECT id, gift_code FROM gift WHERE deal_id = 640 AND remark=115127; 1 row in set (0.14 sec)
 MySQL>SELECT id, gift_code FROM pool_gift WHEREdeal_id = 640 AND remark=‘115127’; 1 row in set (0.005 sec)
 ```
