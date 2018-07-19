@@ -44,7 +44,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 [[menu.main]]
   name = "关于"
   weight = 50
-  url = "/about"
+  url = "/about/"
 
 [params]
   version = "3.x"           # Used to give a friendly message when you have an incompatible update
