@@ -44,3 +44,5 @@ ln -s source target #软链接
 * <a href="https://www.jianshu.com/p/a4beee06220c" target="_blank">TCP三次握手和四次挥手深入实践</a>
 * <a href="https://github.com/dwqs/blog/issues/24" target="_blank">29个你必须知道的Linux命令</a>
 * <a href="https://36kr.com/p/5073181.html" target="_blank">今日头条Go建千亿级微服务的实践</a>
+* <a href="http://www.cnblogs.com/xuning/p/8464625.html">高可用Redis服务架构分析与搭建</a>
+* <a href="https://www.oschina.net/translate/mysql-high-availability-at-github">GitHub 的 MySQL 高可用性实践分享</a>
