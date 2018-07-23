@@ -46,3 +46,4 @@ ln -s source target #软链接
 * <a href="https://36kr.com/p/5073181.html" target="_blank">今日头条Go建千亿级微服务的实践</a>
 * <a href="http://www.cnblogs.com/xuning/p/8464625.html">高可用Redis服务架构分析与搭建</a>
 * <a href="https://www.oschina.net/translate/mysql-high-availability-at-github">GitHub 的 MySQL 高可用性实践分享</a>
+* <a href="https://www.cnblogs.com/kismetv/p/8654978.html">深入学习Redis系列</a>
