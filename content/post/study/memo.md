@@ -3,7 +3,7 @@ title: "备忘"
 date: 2018-07-10T17:13:30+08:00
 categories: ["备忘"]
 ---
-* Linux硬链接和软链接  
+#### Linux硬链接和软链接  
 文件都有文件名与数据，这在 Linux 上被分成两个部分：用户数据 (user data) 与元数据 (metadata)。
 用户数据，即文件数据块 (data block)，数据块是记录文件真实内容的地方；而元数据则是文件的附加属性，如文件大小、创建时间、所有者等信息。
 在 Linux 中，元数据中的 inode 号（inode 是文件元数据的一部分但其并不包含文件名，inode 号即索引节点号）才是文件的唯一标识而非文件名。
@@ -13,7 +13,7 @@ ln source target #硬链接
 ln -s source target #软链接
 ```
 
-* XSS 攻击和 CSRF 攻击的常见防御措施：  
+#### XSS 攻击和 CSRF 攻击的常见防御措施：  
 参考链接：<a href="https://github.com/dwqs/blog/issues/68" target="_blank">浅说 XSS 和 CSRF</a>
   1. 防御XSS攻击  
     a. HttpOnly 防止劫取 Cookie  
@@ -23,6 +23,37 @@ ln -s source target #软链接
     a. 验证码  
     b. Referer Check  
     c. Token 验证  
+
+#### 强大的xargs命令  
+
+*示例1*
+
+例如文件 urls.txt 中有一个url列表，现在想下载他们，可以使用命令一次完成：
+```
+cat urls.txt | xargs wget
+```
+xargs 会把 cat 的输出结果作为参数传给 wget
+
+*示例2*
+  
+再比如需要杀掉 tomcat 进程
+```
+ps -ax | grep tomcat | grep -v grep | awk '{print $1}' | xargs kill -9
+```
+grep tomcat 过滤出含有 tomcat 的进程
+
+grep -v grep 是排除含有 grep 的进程
+
+awk '{print $1}' 取得进程号那列内容
+
+xargs kill -9 把前面取得的tomcat进程号传给 kill命令
+
+*示例3*
+  
+如果要传递的命令中需要多个参数，如 cp 有2个参数，xargs 要把之前命令的输出作为其中一个参数传给 cp
+```
+ls *.txt | xargs -i cp {} /tmp
+```
 
 * 聚簇索引和非聚簇索引
 * nginx中rewrite指令last、break区别
