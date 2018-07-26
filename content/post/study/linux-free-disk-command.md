@@ -46,7 +46,7 @@ tags: ["Linux", "磁盘利用率"]
 
 `stat` <文件/目录>显示文件/目录或文件系统的大小和其他统计信息。
 
-![stat](http://source.icodego.com/image/png/stat.png)
+![stat](http://source.icodego.com/image/png/stat-fav.png)
 
 > fdisk -l
 
