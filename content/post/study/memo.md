@@ -79,3 +79,5 @@ ls *.txt | xargs -i cp {} /tmp
 * <a href="https://www.oschina.net/translate/mysql-high-availability-at-github" target="_blank">GitHub 的 MySQL 高可用性实践分享</a>
 * <a href="https://www.cnblogs.com/kismetv/p/8654978.html" target="_blank">深入学习Redis系列</a>
 * <a href="https://juejin.im/post/5b45cee0e51d45194b18cdbc" target="_blank">理解分布式系统中的缓存架构系列</a>
+* <a href="https://www.itcodemonkey.com/article/7191.html" target="_blank">SpringBoot学习</a>
+* <a href="https://github.com/xingshaocheng/architect-awesome" target="_blank">《后端架构师技术图谱》</a>
