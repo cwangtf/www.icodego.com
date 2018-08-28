@@ -63,7 +63,7 @@ ls *.txt | xargs -i cp {} /tmp
 * <a href="http://www.cnblogs.com/cnblogsfans/p/5075073.html" target="_blank">Git 在团队中的最佳实践--如何正确使用Git Flow</a>
 * <a href="https://www.cnblogs.com/hafiz/p/8146324.html" target="_blank">GitLab配置ssh key</a>
 * <a href="https://github.com/dubbo/dubbo-php-framework" target="_blank">dubbo-php-framework(php语言的RPC通讯框架)</a>
-* <a href="http://wowubuntu.com/markdown/index.html" target="_blank">Markdown 语法说明 (简体中文版)</a>
+* <a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank">markdown基本语法</a>
 * <a href="https://yq.aliyun.com/articles/74395" target="_blank">GitLab的安装及使用教程</a>
 * <a href="http://man.linuxde.net/tar" target="_blank">tar命令</a>
 * <a href="https://www.kancloud.cn/manual/thinkphp5/118008" target="_blank">ThinkPHP5.0目录结构</a>
