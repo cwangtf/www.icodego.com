@@ -1,5 +1,5 @@
 ---
-title: "Linux Vim"
+title: "vim命令总结"
 date: 2018-09-14T23:59:57+08:00
 categories: ["Linux"]
 tags: ["Linux", "vim"]
