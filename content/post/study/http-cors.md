@@ -46,7 +46,7 @@ Access-Control-Allow-Origin: http://foo.example
 
 当请求满足下述任一条件时，即应首先发送预检请求：
 
-*使用了下面任一 HTTP 方法：
+* 使用了下面任一 HTTP 方法：
    + PUT
    + DELETE
    + CONNECT
