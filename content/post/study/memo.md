@@ -135,7 +135,7 @@ pm.max_requests = 1000
 > 如果上面的配置都按照你的实际需求和环境配置好了，不要忘记重启PHP-FPM服务。
 
 参考：  
-* <a href="http://www.php.cn/php-weizijiaocheng-406483.html" target="_blank">关于php-fpm的进程数管理</a>
+<a href="http://www.php.cn/php-weizijiaocheng-406483.html" target="_blank">关于php-fpm的进程数管理</a>
 
 * 聚簇索引和非聚簇索引
 * nginx中rewrite指令last、break区别
