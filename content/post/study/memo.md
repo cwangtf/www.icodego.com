@@ -74,6 +74,7 @@ ls *.txt | xargs -i cp {} /tmp
 ##### 保障基本安全
 
 > 我们为了避免PHP-FPM主进程由于某些糟糕的PHP代码挂掉，需要设置重启的全局配置：
+
 ```
 #如果在1min内有10个子进程被中断失效，重启主进程
 emergency_restart_threshold = 10
