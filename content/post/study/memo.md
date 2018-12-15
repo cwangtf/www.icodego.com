@@ -13,7 +13,7 @@ ln source target #硬链接
 ln -s source target #软链接
 ```
 
-#### XSS 攻击和 CSRF 攻击的常见防御措施：  
+#### XSS 攻击和 CSRF 攻击的常见防御措施  
 参考链接：<a href="https://github.com/dwqs/blog/issues/68" target="_blank">浅说 XSS 和 CSRF</a>
   1. 防御XSS攻击  
     a. HttpOnly 防止劫取 Cookie  
@@ -137,6 +137,26 @@ pm.max_requests = 1000
 
 参考：  
 <a href="http://www.php.cn/php-weizijiaocheng-406483.html" target="_blank">关于php-fpm的进程数管理</a>
+
+#### Linux下批量替换文件内容方法
+
+1、查找  
+`find . -type f -name "*.php"|xargs grep 'findstring'`  
+2、查找并替换  
+`find -name '要查找的文件名' | xargs perl -pi -e 's|被替换的字符串|替换后的字符串|g'`  
+3、批量修改文件夹权限  
+`find . -type -d -name *.php|xargs chmod 755`  
+4、批量修改文件权限  
+`find . -type -f -name *.php|xargs chmod 644`
+
+参考：  
+<a href="https://www.cnblogs.com/fjping0606/p/4428850.html" target="_blank">Linux下批量替换文件内容方法</a>
+
+#### Chrome工具集合
+
+`chrome://about`
+  
+抓包工具`chrome://net-internals`，对开发调试有帮助
 
 * 聚簇索引和非聚簇索引
 * nginx中rewrite指令last、break区别
