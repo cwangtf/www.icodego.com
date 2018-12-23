@@ -28,10 +28,15 @@ set port <端口>
 set password <密码>
 
 spawn ssh $user@$host -p$port
-expect "*password:*"
-send "$password\r"
-interact
-expect eof
+#expect "*password:*"
+#send "$password\r"
+// 改进
+expect {
+  "*yes/no" { send "yes\r"; exp_continue} //第一次ssh连接会提示yes/no,继续
+  "*password:" { send "$password\r" }  //出现密码提示,发送密码
+}
+interact //交互模式
+#expect eof
 ```
 1、[!/usr/bin/expect]  
 使用哪种shell执行
@@ -52,7 +57,7 @@ expect eof
 执行交互操作，跟控制台手动输入密码一样
 
 7、[interact]  
-将控制权交还控制台
+交互模式，将控制权交还控制台
 
 8、[expect eof]  
 结束
