@@ -5,6 +5,10 @@ categories: ["PHP"]
 tags: ["PHP", "config"]
 ---
 
+工作中需要对php-fpm进行调优，这就有必要对php-fpm.conf配置文件进行了解
+
+以下是php安装好后完整的配置文件，主要分为全局配置段[global]和运行配置区段[www]
+
 ```php
 ;;;;;;;;;;;;;;;;;;;;;
 ; FPM Configuration ;
@@ -534,7 +538,5 @@ access.log = /data/logs/php-fpm/$pool.access.log
 ;php_admin_flag[log_errors] = on
 ;php_admin_value[memory_limit] = 32M
 ```
-
-主要分为全局配置段[global]和运行配置区段[www]
 
 各字段具体解释参考：<a href="http://php.net/manual/zh/install.fpm.configuration.php" target="_blank">php-fpm配置</a>
