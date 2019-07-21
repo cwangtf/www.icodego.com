@@ -5,27 +5,27 @@ categories: ["MySQL"]
 tags: ["MySQL", "慢日志"]
 ---
 
-###一、 简介
+### 一、 简介
 pt-query-digest是用于分析mysql慢查询的一个工具，它可以分析binlog、General log、slowlog，也可以通过SHOWPROCESSLIST或者通过tcpdump抓取的MySQL协议数据来进行分析。可以把分析结果输出到文件中，分析过程是先对查询语句的条件进行参数化，然后对参数化以后的查询进行分组统计，统计出各查询的执行时间、次数、占比等，可以借助分析结果找出问题进行优化。
 
-###二、 安装pt-query-digest
-####2.1 下载
+### 二、 安装pt-query-digest
+#### 2.1 下载
 
 下载地址: https://www.percona.com/doc/percona-toolkit/3.0/index.html
 
-####2.2 安装依赖
+#### 2.2 安装依赖
 ```bash
 yum install -y perl-CPAN perl-Time-HiRes
 ```
-####2.3 安装
-#####2.3.1 rpm安装
+#### 2.3 安装
+##### 2.3.1 rpm安装
 ```bash
 cd /usr/local/src
 wget percona.com/get/percona-toolkit.rpm
 yum install -y percona-toolkit.rpm
 rm percona-toolkit.rpm
 ```
-#####2.3.2 源码安装
+##### 2.3.2 源码安装
 ```bash
 cd /usr/local/src
 wget percona.com/get/percona-toolkit.tar.gz
@@ -35,24 +35,24 @@ perl Makefile.PL PREFIX=/usr/local/percona-toolkit
 make && make install
 ```
 >工具安装目录在：/usr/local/percona-toolkit/bin
-####2.4 工具使用
-#####2.4.1 慢查询日志分析统计
+#### 2.4 工具使用
+##### 2.4.1 慢查询日志分析统计
 ```bash
 pt-query-digest /usr/local/mysql/data/slow.log
 ```
-####2.4.2 服务器摘要
+#### 2.4.2 服务器摘要
 ```bash
 pt-summary
 ```
-#####2.4.3 服务器磁盘监测
+##### 2.4.3 服务器磁盘监测
 ```bash
 pt-diskstats 
 ```
-#####2.4.4 mysql服务状态摘要
+##### 2.4.4 mysql服务状态摘要
 ```bash
 pt-mysql-summary -- --user=root --password=root
 ```
-###三、pt-query-digest语法及重要选项
+### 三、pt-query-digest语法及重要选项
 ```bash
 pt-query-digest [OPTIONS] [FILES] [DSN]
 --create-review-table  当使用--review参数把分析结果输出到表中时，如果没有表就自动创建。
@@ -68,7 +68,7 @@ pt-query-digest [OPTIONS] [FILES] [DSN]
 --since 从什么时间开始分析，值为字符串，可以是指定的某个”yyyy-mm-dd [hh:mm:ss]”格式的时间点，也可以是简单的一个时间值：s(秒)、h(小时)、m(分钟)、d(天)，如12h就表示从12小时前开始统计。
 --until 截止时间，配合—since可以分析一段时间内的慢查询。
 ```
-###四、分析pt-query-digest输出结果
+### 四、分析pt-query-digest输出结果
 * 第一部分：总体统计结果
 Overall：总共有多少条查询
 Time range：查询执行的时间范围
@@ -156,58 +156,58 @@ Explain：SQL语句
 # EXPLAIN /*!50100 PARTITIONS*/
 select sleep(2)\G
 ```
-###五、例子
-####5.1 直接分析慢查询文件:
+### 五、例子
+#### 5.1 直接分析慢查询文件:
 ```bash
 pt-query-digest  slow.log > slow_report.log
 ```
-####5.2 分析最近12小时内的查询
+#### 5.2 分析最近12小时内的查询
 ```bash
 pt-query-digest  --since=12h  slow.log > slow_report2.log
 ```
-####5.3 分析指定时间范围内的查询
+#### 5.3 分析指定时间范围内的查询
 ```bash
 pt-query-digest slow.log --since '2017-01-07 09:30:00' --until '2017-01-07 10:00:00'> > slow_report3.log
 ```
-####5.4 分析指含有select语句的慢查询
+#### 5.4 分析指含有select语句的慢查询
 ```bash
 pt-query-digest --filter '$event->{fingerprint} =~ m/^select/i' slow.log> slow_report4.log
 ```
-####5.5 针对某个用户的慢查询
+#### 5.5 针对某个用户的慢查询
 ```bash
 pt-query-digest --filter '($event->{user} || "") =~ m/^root/i' slow.log> slow_report5.log
 ```
-####5.6 查询所有所有的全表扫描或full join的慢查询
+#### 5.6 查询所有所有的全表扫描或full join的慢查询
 ```bash
 pt-query-digest --filter '(($event->{Full_scan} || "") eq "yes") ||(($event->{Full_join} || "") eq "yes")' slow.log> slow_report6.log
 ```
-####5.7 把查询保存到query_review表
+#### 5.7 把查询保存到query_review表
 ```bash
 pt-query-digest --user=root –password=abc123 --review  h=localhost,D=test,t=query_review--create-review-table  slow.log
 ```
-####5.8 把查询保存到query_history表
+#### 5.8 把查询保存到query_history表
 ```bash
 pt-query-digest  --user=root –password=abc123 --review  h=localhost,D=test,t=query_history--create-review-table  slow.log_0001
 pt-query-digest  --user=root –password=abc123 --review  h=localhost,D=test,t=query_history--create-review-table  slow.log_0002
 ```
-####5.9 通过tcpdump抓取mysql的tcp协议数据，然后再分析
+#### 5.9 通过tcpdump抓取mysql的tcp协议数据，然后再分析
 ```bash
 tcpdump -s 65535 -x -nn -q -tttt -i any -c 1000 port 3306 > mysql.tcp.txt
 pt-query-digest --type tcpdump mysql.tcp.txt> slow_report9.log
 ```
-####5.10 分析binlog
+#### 5.10 分析binlog
 ```bash
 mysqlbinlog mysql-bin.000093 > mysql-bin000093.sql
 pt-query-digest  --type=binlog  mysql-bin000093.sql > slow_report10.log
 ```
-####5.11 分析general log
+#### 5.11 分析general log
 ```bash
 pt-query-digest  --type=genlog  localhost.log > slow_report11.log
 ```
-###六、 将分析结果可视化
+### 六、 将分析结果可视化
 使用pt-query-digest分析慢查询日志并将查询分析数据保存到MySQL数据库表中，然后使用应用程序来展示分析结果。目前有基于LAMP的Query-Digest-UI、Anemometer开源项目支持。
 
-####6.1 将慢日志插入表中
+#### 6.1 将慢日志插入表中
 ```bash
 $ pt-query-digest \
 --user=mha \
@@ -219,7 +219,7 @@ $ pt-query-digest \
 --create-history-table \
 --limit=0% slow.log
 ```
-####6.2 查看表信息
+#### 6.2 查看表信息
 ```bash
 mysql> select * from global_query_review limit 1\G
 *************************** 1. row ***************************
