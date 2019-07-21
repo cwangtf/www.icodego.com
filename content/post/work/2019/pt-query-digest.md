@@ -34,7 +34,9 @@ cd percona-toolkit-2.2.19
 perl Makefile.PL PREFIX=/usr/local/percona-toolkit
 make && make install
 ```
+
 >工具安装目录在：/usr/local/percona-toolkit/bin
+
 #### 2.4 工具使用
 ##### 2.4.1 慢查询日志分析统计
 ```bash
