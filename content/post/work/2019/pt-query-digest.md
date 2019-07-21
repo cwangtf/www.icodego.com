@@ -54,6 +54,7 @@ pt-diskstats
 ```bash
 pt-mysql-summary -- --user=root --password=root
 ```
+
 ### 三、pt-query-digest语法及重要选项
 ```bash
 pt-query-digest [OPTIONS] [FILES] [DSN]
@@ -70,6 +71,7 @@ pt-query-digest [OPTIONS] [FILES] [DSN]
 --since 从什么时间开始分析，值为字符串，可以是指定的某个”yyyy-mm-dd [hh:mm:ss]”格式的时间点，也可以是简单的一个时间值：s(秒)、h(小时)、m(分钟)、d(天)，如12h就表示从12小时前开始统计。
 --until 截止时间，配合—since可以分析一段时间内的慢查询。
 ```
+
 ### 四、分析pt-query-digest输出结果
 * 第一部分：总体统计结果
 Overall：总共有多少条查询
@@ -158,6 +160,7 @@ Explain：SQL语句
 # EXPLAIN /*!50100 PARTITIONS*/
 select sleep(2)\G
 ```
+
 ### 五、例子
 #### 5.1 直接分析慢查询文件:
 ```bash
@@ -206,6 +209,7 @@ pt-query-digest  --type=binlog  mysql-bin000093.sql > slow_report10.log
 ```bash
 pt-query-digest  --type=genlog  localhost.log > slow_report11.log
 ```
+
 ### 六、 将分析结果可视化
 使用pt-query-digest分析慢查询日志并将查询分析数据保存到MySQL数据库表中，然后使用应用程序来展示分析结果。目前有基于LAMP的Query-Digest-UI、Anemometer开源项目支持。
 
