@@ -14,7 +14,7 @@ ln -s source target #软链接
 ```
 
 #### XSS 攻击和 CSRF 攻击的常见防御措施  
-参考链接：<a href="https://github.com/dwqs/blog/issues/68" target="_blank">浅说 XSS 和 CSRF</a>
+参考链接：[浅说 XSS 和 CSRF](https://github.com/dwqs/blog/issues/68)
   1. 防御XSS攻击  
     a. HttpOnly 防止劫取 Cookie  
     b. 用户的输入检查  
@@ -136,7 +136,7 @@ pm.max_requests = 1000
 > 如果上面的配置都按照你的实际需求和环境配置好了，不要忘记重启PHP-FPM服务。
 
 参考：  
-<a href="http://www.php.cn/php-weizijiaocheng-406483.html" target="_blank">关于php-fpm的进程数管理</a>
+[关于php-fpm的进程数管理](http://www.php.cn/php-weizijiaocheng-406483.html)
 
 #### Linux下批量替换文件内容方法
 
@@ -150,7 +150,7 @@ pm.max_requests = 1000
 `find . -type -f -name *.php|xargs chmod 644`
 
 参考：  
-<a href="https://www.cnblogs.com/fjping0606/p/4428850.html" target="_blank">Linux下批量替换文件内容方法</a>
+[Linux下批量替换文件内容方法](https://www.cnblogs.com/fjping0606/p/4428850.html)
 
 #### Chrome工具集合
 
@@ -161,26 +161,26 @@ pm.max_requests = 1000
 * 聚簇索引和非聚簇索引
 * nginx中rewrite指令last、break区别
 * 组合索引最左优先原则
-* <a href="http://www.php.cn/php-weizijiaocheng-383032.html" target="_blank">TP5 自动加载机制详解</a>
-* <a href="https://my.oschina.net/EIKPE2lvl3wigMQG/blog/1832646" target="_blank">Hugo+Caddy打造个人博客</a>
-* <a href="http://www.cnblogs.com/cnblogsfans/p/5075073.html" target="_blank">Git 在团队中的最佳实践--如何正确使用Git Flow</a>
-* <a href="https://www.cnblogs.com/hafiz/p/8146324.html" target="_blank">GitLab配置ssh key</a>
-* <a href="https://github.com/dubbo/dubbo-php-framework" target="_blank">dubbo-php-framework(php语言的RPC通讯框架)</a>
-* <a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank">markdown基本语法</a>
-* <a href="https://yq.aliyun.com/articles/74395" target="_blank">GitLab的安装及使用教程</a>
-* <a href="http://man.linuxde.net/tar" target="_blank">tar命令</a>
-* <a href="https://www.kancloud.cn/manual/thinkphp5/118008" target="_blank">ThinkPHP5.0目录结构</a>
-* <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank">常用 Git 命令清单</a>
-* <a href="https://psr.phphub.org" target="_blank">PHP 标准规范</a>
-* <a href="https://blog.csdn.net/shmilychan/article/details/73433804" target="_blank">Redis+Twemproxy+HAProxy集群</a>
-* <a href="https://blog.csdn.net/zhuxineli/article/details/14455029" target="_blank">MYSQL explain详解</a>
-* <a href="http://825635381.iteye.com/blog/2276077" target="_blank">高并发的核心技术-幂等的实现方案</a>
-* <a href="https://www.jianshu.com/p/a4beee06220c" target="_blank">TCP三次握手和四次挥手深入实践</a>
-* <a href="https://github.com/dwqs/blog/issues/24" target="_blank">29个你必须知道的Linux命令</a>
-* <a href="https://36kr.com/p/5073181.html" target="_blank">今日头条Go建千亿级微服务的实践</a>
-* <a href="http://www.cnblogs.com/xuning/p/8464625.html" target="_blank">高可用Redis服务架构分析与搭建</a>
-* <a href="https://www.oschina.net/translate/mysql-high-availability-at-github" target="_blank">GitHub 的 MySQL 高可用性实践分享</a>
-* <a href="https://www.cnblogs.com/kismetv/p/8654978.html" target="_blank">深入学习Redis系列</a>
-* <a href="https://juejin.im/post/5b45cee0e51d45194b18cdbc" target="_blank">理解分布式系统中的缓存架构系列</a>
-* <a href="https://www.itcodemonkey.com/article/7191.html" target="_blank">SpringBoot学习</a>
-* <a href="https://github.com/xingshaocheng/architect-awesome" target="_blank">《后端架构师技术图谱》</a>
+* [TP5 自动加载机制详解](http://www.php.cn/php-weizijiaocheng-383032.html)
+* [Hugo+Caddy打造个人博客](https://my.oschina.net/EIKPE2lvl3wigMQG/blog/1832646)
+* [Git 在团队中的最佳实践--如何正确使用Git Flow](http://www.cnblogs.com/cnblogsfans/p/5075073.html)
+* [GitLab配置ssh key](https://www.cnblogs.com/hafiz/p/8146324.html)
+* [dubbo-php-framework(php语言的RPC通讯框架)](https://github.com/dubbo/dubbo-php-framework)
+* [markdown基本语法](https://www.jianshu.com/p/191d1e21f7ed)
+* [GitLab的安装及使用教程](https://yq.aliyun.com/articles/74395)
+* [tar命令](http://man.linuxde.net/tar)
+* [ThinkPHP5.0目录结构](https://www.kancloud.cn/manual/thinkphp5/118008)
+* [常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
+* [PHP 标准规范](https://psr.phphub.org)
+* [Redis+Twemproxy+HAProxy集群](https://blog.csdn.net/shmilychan/article/details/73433804)
+* [MYSQL explain详解](https://blog.csdn.net/zhuxineli/article/details/14455029)
+* [高并发的核心技术-幂等的实现方案](http://825635381.iteye.com/blog/2276077)
+* [TCP三次握手和四次挥手深入实践](https://www.jianshu.com/p/a4beee06220c)
+* [29个你必须知道的Linux命令](https://github.com/dwqs/blog/issues/24)
+* [今日头条Go建千亿级微服务的实践](https://36kr.com/p/5073181.html)
+* [高可用Redis服务架构分析与搭建](http://www.cnblogs.com/xuning/p/8464625.html)
+* [GitHub 的 MySQL 高可用性实践分享](https://www.oschina.net/translate/mysql-high-availability-at-github)
+* [深入学习Redis系列](https://www.cnblogs.com/kismetv/p/8654978.html)
+* [理解分布式系统中的缓存架构系列](https://juejin.im/post/5b45cee0e51d45194b18cdbc)
+* [SpringBoot学习](https://www.itcodemonkey.com/article/7191.html)
+* [《后端架构师技术图谱》](https://github.com/xingshaocheng/architect-awesome)
