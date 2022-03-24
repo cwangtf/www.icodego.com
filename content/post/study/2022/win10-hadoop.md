@@ -58,7 +58,7 @@ tags: ["Hadoop", "大数据", "配置"]
     执行成功结果:  
     ![namenode format](http://source.icodego.com/2022/namenode_format.png)
     ![namenode data](http://source.icodego.com/2022/namenode_data.png)  
-    多出data文件夹
+    多出data文件夹  
 7. 启动&关闭Hadoop  
     a. 进入Hadoop的sbin目录下执行start-dfs.cmd启动Hadoop  
     b. Web界面查看HDFS信息，在浏览器输入http://localhost:9870/，可访问NameNode  
